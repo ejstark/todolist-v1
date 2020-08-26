@@ -5,31 +5,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>To Do List</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
 
-    <% if (kindOfDay === 'Saturday' || kindOfDay === 'Sunday'){ %>
-    <h1 style="color: blueviolet"><%= kindOfDay %></h1>
-    <% } else { %>
-    <h1 style="color: brown;"><%= kindOfDay %></h1>
-    <% } %>
+    <div class='box' id='heading'>
+        <% if (kindOfDay === 'Saturday' || kindOfDay === 'Sunday'){ %>
+        <h1 style="color: blueviolet"><%= kindOfDay %></h1>
+        <% } else { %>
+        <h1 style="color: brown;"><%= kindOfDay %></h1>
+        <% } %>
 
-    <ul>
+    </div>
+
+    <div class="box">
+
+
 
         <% for(let a=0; a<newListItems.length; a++){ %>
-        <li> <%= newListItems[a] %> </li>
+
+        <div class="item">
+            <input type="checkbox">
+            <p> <%= newListItems[a] %> </p>
+        </div>
 
         <% } %>
-    </ul>
 
-    <form action="/" method="post">
 
-        <input type="text" name="newItem">
 
-        <button type="submit" name="button">Add</button>
+        <form class="item" action="/" method="post">
+            <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+            <button type="submit" name="button">+</button>
+        </form>
 
-    </form>
+    </div>
+
+
+
+
+
 
 </body>
 
