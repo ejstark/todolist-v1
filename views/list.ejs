@@ -1,20 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
 
-<body>
+<%- include("header") -%> 
 
     <div class='box' id='heading'>
-        <% if (kindOfDay === 'Saturday' || kindOfDay === 'Sunday'){ %>
-        <h1 style="color: blueviolet"><%= kindOfDay %></h1>
+        <% if (listTitle === 'Saturday' || listTitle === 'Sunday'){ %>
+        <h1 style="color: blueviolet"><%= listTitle %></h1>
         <% } else { %>
-        <h1 style="color: brown;"><%= kindOfDay %></h1>
+        <h1 style="color: brown;"><%= listTitle %></h1>
         <% } %>
 
     </div>
@@ -36,7 +28,7 @@
 
         <form class="item" action="/" method="post">
             <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
-            <button type="submit" name="button">+</button>
+            <button type="submit" name="list" value=<%= listTitle %>>+</button>
         </form>
 
     </div>
@@ -46,6 +38,4 @@
 
 
 
-</body>
-
-</html>
+    <%- include("footer") -%> 
